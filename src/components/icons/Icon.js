@@ -10,6 +10,8 @@ const Icon = ({ type }) => {
     dash: Home,
     posts: Post,
     users: User,
+    bell: Bell,
+    message: Message,
   };
 
   const DynamicIcon = icons[type];
