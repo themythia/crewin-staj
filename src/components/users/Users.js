@@ -12,8 +12,11 @@ const Users = () => {
   }, []);
 
   return (
-    <main className='users'>
-      {users && users.map((user, idx) => <User key={idx} data={user} />)}
+    <main className='container'>
+      <h1>Users</h1>
+      <div className='card-container'>
+        {users && users.map((user, idx) => <User key={idx} data={user} />)}
+      </div>
     </main>
   );
 };

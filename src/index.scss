@@ -18,9 +18,16 @@ body {
 
 #root {
   display: grid;
-  grid-template-columns: 300px 1620px;
+  grid-template-columns: 300px 1fr;
   min-height: 100vh;
   width: 100%;
+}
+
+h1 {
+  font-size: 18px;
+  line-height: 22px;
+  font-weight: 700;
+  margin: 0 0 24px 0;
 }
 
 nav {
@@ -77,6 +84,7 @@ nav {
   svg {
     margin-right: 20px;
     cursor: pointer;
+    stroke: #292d32;
   }
 
   .avatar {
@@ -89,8 +97,15 @@ nav {
   }
 }
 
-.users {
+.container {
   padding: 24px 80px 0 68px;
+}
+
+.posts-container {
+  padding: 24px 75px 0 68px;
+}
+
+.card-container {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   grid-template-rows: repeat(2, minmax(0, 1fr));
@@ -136,10 +151,98 @@ nav {
     }
 
     .name {
-      font-weight: 700;
+      font-weight: 600;
       color: black;
       font-size: 20px;
       line-height: 24px;
+    }
+  }
+}
+
+.post-card-container {
+  display: flex;
+  flex-direction: column;
+
+  .post {
+    width: 100%;
+    padding: 20px 20px 24px 24px;
+    box-shadow: 0px 4px 17px rgba(135, 135, 135, 0.11);
+    border-radius: 15px;
+    margin-bottom: 24px;
+
+    &:last-of-type {
+      margin-bottom: 0px;
+    }
+
+    &:hover {
+      box-shadow: 0px 4px 37px rgba(135, 135, 135, 0.3);
+    }
+
+    .title {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      width: 100%;
+      position: relative;
+
+      h2 {
+        font-size: 20px;
+        line-height: 24px;
+        font-weight: 600;
+        margin: 4px 0 24px 0;
+      }
+
+      button {
+        background: inherit;
+        border: none;
+        height: 24px;
+        width: 24px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0;
+      }
+
+      svg {
+        stroke: #292d32;
+        cursor: pointer;
+      }
+
+      .menu {
+        display: flex;
+        flex-direction: column;
+        box-shadow: 0px 4px 17px rgba(135, 135, 135, 0.11);
+        border-radius: 10px;
+        padding: 15px 15px 10px;
+        width: 91px;
+        height: 74px;
+        position: absolute;
+        z-index: 10;
+        right: 2px;
+        top: 30px;
+        background: white;
+
+        span {
+          font-family: 500;
+          color: #7a7a7a;
+          line-height: 17px;
+          font-size: 14px;
+          margin-bottom: 15px;
+          cursor: pointer;
+
+          &:last-of-type {
+            margin-bottom: 0;
+          }
+        }
+      }
+    }
+
+    p {
+      font-size: 14px;
+      line-height: 17px;
+      color: #ababab;
+      margin: 0;
+      padding-right: 5px;
     }
   }
 }
