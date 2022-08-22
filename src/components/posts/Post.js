@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import Icon from '../icons/Icon';
+import Menu from './Menu';
 
 const Post = ({ data }) => {
   const [showMenu, setShowMenu] = useState(false);
@@ -11,12 +12,7 @@ const Post = ({ data }) => {
         <button onClick={() => setShowMenu(!showMenu)}>
           <Icon type='more' />
         </button>
-        {showMenu && (
-          <div className='menu'>
-            <span>Edit</span>
-            <span>Delete</span>
-          </div>
-        )}
+        {showMenu && <Menu />}
       </div>
       <p>{data.body}</p>
     </div>
