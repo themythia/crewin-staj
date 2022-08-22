@@ -29,16 +29,18 @@ const TextArea = ({ idx, setShowTextArea }) => {
   };
 
   return (
-    <>
+    <div className='textarea-container'>
       <textarea
         ref={ref}
         autoFocus
         value={input}
         onChange={(e) => setInput(e.target.value)}
       />
-      <button onClick={editPost}>Edit</button>
-      <button onClick={cancelEdit}>Cancel</button>
-    </>
+      <div className='button-container'>
+        <button onClick={editPost}>Edit</button>
+        <button onClick={cancelEdit}>Cancel</button>
+      </div>
+    </div>
   );
 };
 export default TextArea;

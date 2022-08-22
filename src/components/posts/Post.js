@@ -1,4 +1,4 @@
-import { useContext, useRef, useState } from 'react';
+import { useContext, useState } from 'react';
 import { PostContext } from '../../contexts/PostContext';
 import Icon from '../icons/Icon';
 import Menu from './Menu';
