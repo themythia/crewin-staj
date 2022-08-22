@@ -1,4 +1,5 @@
 import { Routes, Route } from 'react-router-dom';
+import PostContextProvider from '../contexts/PostContext';
 import Account from './Account';
 import Navbar from './navbar/Navbar';
 import Posts from './posts/Posts';
@@ -8,12 +9,14 @@ function App() {
   return (
     <>
       <Navbar />
-      <div>
+      <div className='right-side'>
         <Account />
-        <Routes>
-          <Route path='/users' element={<Users />} />
-          <Route path='/posts' element={<Posts />} />
-        </Routes>
+        <PostContextProvider>
+          <Routes>
+            <Route path='/users' element={<Users />} />
+            <Route path='/posts' element={<Posts />} />
+          </Routes>
+        </PostContextProvider>
       </div>
     </>
   );
